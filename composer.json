@@ -1,0 +1,26 @@
+{
+    "name": "vayes/tier",
+    "type": "library",
+    "description": "Tier classes",
+    "keywords": [],
+    "homepage": "https://vayes.com.tr",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Yahya Erturan",
+          "email": "yahya@erturan.com.tr"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "symfony/polyfill-uuid": "^1.14",
+        "vayes/enum": "^1.0",
+        "vayes/str": "^1.0"
+    },
+    "autoload": {
+        "psr-4": { "Vayes\\Tier\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}
