@@ -14,9 +14,19 @@
     "require": {
         "php": "^7.1.3",
         "symfony/polyfill-uuid": "^1.14",
-        "vayes/enum": "^1.0",
-        "vayes/str": "^1.0"
+        "vayes/enum": "1.*",
+        "vayes/str": "1.*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vayes/enum"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vayes/str"
+        }
+    ],
     "autoload": {
         "psr-4": { "Vayes\\Tier\\": "" },
         "exclude-from-classmap": [
