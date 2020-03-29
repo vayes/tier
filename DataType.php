@@ -11,6 +11,9 @@ class DataType
     private $name;
 
     /** @var string */
+    private $field_type;
+
+    /** @var string */
     private $var_type;
 
     /** @var string */
@@ -56,6 +59,21 @@ class DataType
     public function setName(string $name): self
     {
         $this->name = $name;
+        return $this;
+    }
+
+    public function getFieldType(): ?string
+    {
+        return $this->field_type;
+    }
+
+    /**
+     * @param string $field_type
+     * @return $this
+     */
+    public function setFieldType(string $field_type): self
+    {
+        $this->field_type = $field_type;
         return $this;
     }
 
