@@ -11,7 +11,7 @@ class DataType
     private $name;
 
     /** @var string */
-    private $field_type;
+    private $slug;
 
     /** @var string */
     private $var_type;
@@ -62,18 +62,18 @@ class DataType
         return $this;
     }
 
-    public function getFieldType(): ?string
+    public function getSlug(): ?string
     {
-        return $this->field_type;
+        return $this->slug;
     }
 
     /**
-     * @param string $field_type
+     * @param string $slug
      * @return $this
      */
-    public function setFieldType(string $field_type): self
+    public function setSlug(string $slug): self
     {
-        $this->field_type = $field_type;
+        $this->slug = $slug;
         return $this;
     }
 
