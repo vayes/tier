@@ -29,13 +29,13 @@ class TierPropertyValidator
     private $argument_2;
 
     /** @var bool */
-    private $on_insert = false;
+    private $on_insert = true;
 
     /** @var bool */
-    private $on_update = false;
+    private $on_update = true;
 
     /** @var bool */
-    private $on_delete = false;
+    private $on_delete = true;
 
     /** @var ValidationRule */
     protected $validator;

@@ -31,6 +31,12 @@ class Tier implements TierInterface
     private $description;
 
     /** @var bool */
+    private $hierarchical = false;
+
+    /** @var bool */
+    private $multilingual = false;
+
+    /** @var bool */
     private $protected = false;
 
     /** @var TierProperty[] */
@@ -130,9 +136,39 @@ class Tier implements TierInterface
         return $this;
     }
 
+    public function isHierarchical(): bool
+    {
+        return $this->hierarchical;
+    }
+
+    /**
+     * @param bool $hierarchical
+     * @return $this
+     */
+    public function setHierarchical(bool $hierarchical): self
+    {
+        $this->hierarchical = $hierarchical;
+        return $this;
+    }
+
     public function isProtected(): bool
     {
         return $this->protected;
+    }
+
+    public function isMultilingual(): bool
+    {
+        return $this->multilingual;
+    }
+
+    /**
+     * @param bool $multilingual
+     * @return Tier
+     */
+    public function setMultilingual(bool $multilingual): Tier
+    {
+        $this->multilingual = $multilingual;
+        return $this;
     }
 
     /**
