@@ -28,6 +28,9 @@ class Field
     /** @var string */
     private $modelName;
 
+    /** @var bool */
+    private $multilingual = false;
+
     /** @var string */
     private $identifier;
 
@@ -155,6 +158,21 @@ class Field
         return $this;
     }
 
+    public function isMultilingual(): bool
+    {
+        return $this->multilingual;
+    }
+
+    /**
+     * @param bool $multilingual
+     * @return $this
+     */
+    public function setMultilingual(bool $multilingual): self
+    {
+        $this->multilingual = $multilingual;
+        return $this;
+    }
+
     public function getIdentifier(): ?string
     {
         return $this->identifier;
@@ -174,8 +192,10 @@ class Field
      * @param string $tableAlias
      * @return string
      */
-    public function getAliasedColumnName(string $tableAlias): string
+    public function getAliasedColumnName(string $tableAlias, bool $isMultilingual = false): string
     {
-        return $tableAlias . '.' . $this->getColumnName();
+        return false === $isMultilingual
+            ? $tableAlias . '.' . $this->getColumnName()
+            : $tableAlias .'l' . '.' . $this->getColumnName();
     }
 }
