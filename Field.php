@@ -196,6 +196,6 @@ class Field
     {
         return false === $isMultilingual
             ? $tableAlias . '.' . $this->getColumnName()
-            : $tableAlias .'l' . '.' . $this->getColumnName();
+            : $tableAlias .'_t' . '.' . $this->getColumnName();
     }
 }
